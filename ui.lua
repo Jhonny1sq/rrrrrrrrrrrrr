@@ -1064,31 +1064,4 @@ lib.CreateWindow = function(GName, ToggleKey)
     return wlib
 end
 
--- ==================== DEMO ====================
-
-local w    = lib.CreateWindow("blox fruits", Enum.KeyCode.Delete)
-
-local main = w.CreateTab("Main")
-main.CreateSection("Combat")
-main.CreateButton({ Text = "Kill Aura",   Callback = function() print("kill aura") end })
-main.CreateToggle({ Text = "ESP",         Default = false, Callback = function(s) print("esp:", s) end })
-main.CreateSlider({
-    Text = "WalkSpeed", Min = 16, Max = 300, Default = 16, Round = true,
-    Callback = function(v)
-        local hum = game.Players.LocalPlayer.Character
-            and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-        if hum then hum.WalkSpeed = v end
-    end,
-})
-main.CreateDropdown({
-    Text    = "Target Mode",
-    Options = { "Nearest", "Lowest HP", "Random" },
-    Default = "Nearest",
-})
-
-local cfg = w.CreateTab("Config")
-cfg.CreateButton({ Text = "Save Config", Callback = function() print("saved") end })
-
-w.Notification("Loaded", "bloody.gg active.", 4)
-
 return lib
