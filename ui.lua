@@ -5,7 +5,7 @@ local uis     = game:GetService("UserInputService")
 local tween   = game:GetService("TweenService")
 local rs      = game:GetService("RunService")
 
-local player  = game.Players.LocalPlayer
+local player  = game:GetService("Players").LocalPlayer
 
 -- ==================== HELPERS ====================
 
